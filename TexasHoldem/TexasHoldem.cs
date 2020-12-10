@@ -65,6 +65,11 @@ namespace TexasHoldem
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Checks if the passed in hand has a Pair in it
+        /// </summary>
+        /// <param name="hand">The Hand</param>
+        /// <returns>True if pair detected</returns>
         public bool IsPair(List<Card> hand)
         {
             return hand.GroupBy(card => card.CardValue).Any(group => group.Count() == 2);
@@ -90,6 +95,11 @@ namespace TexasHoldem
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Checks if the passed in hand has a Two Pair in it
+        /// </summary>
+        /// <param name="hand">The Hand</param>
+        /// <returns>True if two pair detected</returns>
         public bool IsTwoPair(List<Card> hand)
         {
             return hand.GroupBy(card => card.CardValue).Count(pairs => pairs.Count() == 2) == 2;
